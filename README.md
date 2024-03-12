@@ -1,8 +1,7 @@
 # SelfStudyJavaScript
-------
 한빛미디어 혼공학습단 10기 JS (23하계)
 
-##주차별 학습 필기본
+## 주차별 학습 필기본
 ------
 - [1주차](https://carnation-celery-008.notion.site/1-068ab38e769041eea47843f4fb4625df?pvs=4)
 - [2주차](https://carnation-celery-008.notion.site/2-9504c85651f24607bdfeb0b1353d0c8b?pvs=4)
