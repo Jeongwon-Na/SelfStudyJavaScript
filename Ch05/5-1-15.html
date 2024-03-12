@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <script>
+        //요소 출력 함수
+        function sample(...items){
+            console.log(items)
+        }
+
+        const array=[1, 2, 3 ,4]
+        
+        //구 버전
+        sample.apply(null, array)
+        //현재
+        sample(...array)
+    </script>
+</head>
+<body>
+
+</body>
+</html>

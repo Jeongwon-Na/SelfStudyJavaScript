@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>이벤트 연결하기</title>
+    <script>
+        document.addEventListener('DOMContentLoaded', ()=>{
+            //초기값 설정
+            let counter=0
+            //h1태그를 가리키는 h1Tag 생성
+            const h1Tag=document.querySelector('h1')
+            
+            //h1에서 클릭이 일어날 때의 이벤트리스너 설정
+            h1Tag.addEventListener('click', ()=>{
+                counter++
+                h1Tag.textContent=`클릭 횟수: ${counter}`
+            })
+        })
+    </script>
+    <style>
+        h1{
+            user-select: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>클릭 횟수: 0</h1>
+</body>
+</html>

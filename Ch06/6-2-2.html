@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <script>
+        String.prototype.contain=function (data){
+            return this.indexOf(data)>=0
+        }
+
+        Array.prototype.contain=function (data){
+            return this.indexOf(data)>=0
+        }
+
+        const string='자바스크립트'
+        console.log(`'${string}'에 '자바'가 있는가?: ${string.contain('자바')}`)
+        
+        const array=[1, 2, 3, 4, 5]
+        console.log(`[${array}]에 100이 있는가?: ${array.contain(100)}`)
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

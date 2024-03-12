@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
+    <script>
+        const books=[{
+            name:'È¥ÀÚ °øºÎÇÏ´Â ÆÄÀÌ½ã',
+            price:18000,
+            publisher:'ÇÑºû¹Ìµð¾î'
+        },
+        {
+            name:'HTML5 À¥ ÇÁ·Î±×·¡¹Ö ÀÔ¹®',
+            price:26000,
+            publisher:'ÇÑºû¾ÆÄ«µ¥¹Ì'
+        },
+        {
+            name:'¸Ó½Å·¯´× µö·¯´× ½ÇÀü °³¹ß ¾÷¹«',
+            price:30000,
+            publisher:'À§Å°ºÏ½º'
+        },
+        {
+            name:'µö·¯´×À» À§ÇÑ ¼öÇÐ',
+            price:25000,
+            publisher:'À§Å°ºÏ½º'
+        }]
+
+        console.log(_.orderBy(books, (book)=>book.name))
+    </script>
+</head>
+<body>
+
+</body>
+</html>

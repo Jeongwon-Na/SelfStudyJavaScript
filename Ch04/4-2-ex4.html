@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <script>
+        let output=''
+        const size=5
+
+        //첫번째 삼각형 저장
+        for(let i=4;i>=0;i--){         //5번 시행
+        
+            for(let k=0;k<i;k++){
+                output+=' '
+            }
+        
+            for(let m=0;m<2*(size-i)-1;m++){
+                output+='*'
+            }
+        
+            output+='\n'
+        }
+
+        //두번째 역삼각형 저장
+        for(let i=1;i<5;i++){         //4번 시행 01 12 23 34
+        
+            for(let k=0;k<i;k++){
+                output+=' '
+            }
+        //i=1,2,3,4 (1,7) (2,5) (3,3) (4,1)
+            for(let m=0;m<(-2)*(i-1)+7;m++){   //7 5 3 1 
+                output+='*'
+            }
+        
+            output+='\n'
+        }
+
+        console.log(output)
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

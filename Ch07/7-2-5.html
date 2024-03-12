@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>이메일 형식의 검사</title>
+    <script>
+        document.addEventListener('DOMContentLoaded', ()=>{
+            //변수를 문서객체 각각에 할당한다
+            const input=document.querySelector('input')
+            const p=document.querySelector('p')
+
+            //이메일인지 검사하는 함수의 설정
+            const isEmail=(value)=>{
+                //참으로 반환되는 조건: 골뱅이 포함여부와 이후에 입력되는 점. 둘 다 참이어야 함
+                return (value.indexOf('@')>1)&&(value.split('@')[1].indexOf('.')>1)
+            }
+
+            //input에서 키보드가 떨어졌을 때 p문구의 판단
+            input.addEventListener('keyup', (event)=>{
+                //input에서의 값을 추출해 value에 저장 
+                const value=event.currentTarget.value
+                //value에 저장한 값이 이메일 형식일 때의 조작
+                if(isEmail(value)){
+                    p.style.color='green'
+                    p.textContent=`이메일 형식입니다: ${value}`
+                }
+                else{
+                    p.style.color='red'
+                    p.textContent=`이메일 형식이 아닙니다: ${value}`
+                }
+            })
+        })
+    </script>
+</head>
+<body>
+    <input type="text"><br>
+    <p></p>
+</body>
+</html>

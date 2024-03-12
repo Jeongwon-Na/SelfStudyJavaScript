@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>localStorage객체 활용</title>
+    <script>
+        document.addEventListener('DOMContentLoaded', ()=>{
+            //해당 문서객체를 가리키는 변수의 설정
+            const p=document.querySelector('p')
+            const button=document.querySelector('button')
+            const input=document.querySelector('input')
+
+            //localStorage에 저장되어 있던 값을 추출
+            const savedValue=localStorage.getItem('a')
+            //만약에 input에서 값이 추출되어 존재하면 입력창에도 반영하고 안내문도 띄우기
+            if(savedValue){
+                input.value=savedValue
+                p.textContent=`이전 실행 때의 마지막 값: ${savedValue}`
+            }
+
+            //input에 입력할 때마다 현재 입력한 값을 localStorage에 저장
+            input.addEventListener('keyup', (event)=>{
+                const value=event.currentTarget.value
+                localStorage.setItem('a', value)
+            })
+
+            //지우기 버튼을 누르면 입력창에 있는 내용을 지우고 localStorage에 저장되어 있던 값도 비워냄
+            button.addEventListener('click', ()=>{
+                input.value=''
+                localStorage.clear()
+            })
+        })
+    </script>
+</head>
+<body>
+    <p></p>
+    <button>지우기</button>
+    <input type="text">
+</body>
+</html>

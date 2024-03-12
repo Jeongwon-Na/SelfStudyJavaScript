@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <script>
+        document.addEventListener('DOMContentLoaded', ()=>{
+            //h1태그를 생성하고 싶음
+            const header=document.createElement('h1')
+
+            //h1태그를 body태그 아래헤 추가하고 싶음
+            document.body.appendChild(header)
+
+            //생성하고 배치한 태그에 속성을 추가하고 싶음
+            header.textContent='문서 객체 동적으로 추가하기'
+            //header.setAttribute('data-custom', '사용자 정의 속성')
+            header.style.color='pink'
+            header.style.backgroundColor='black'
+
+        })
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

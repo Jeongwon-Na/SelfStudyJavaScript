@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Rectangle클래스</title>
+    <script>
+        //클래스의 생성
+        class Rectangle{
+            //생성자 함수의 추가
+            constructor(width, height){
+                this.width=width
+                this.height=height
+            }
+            //둘레를 구하는 메소드 추가
+            getPerimeter(){
+                return 2*(this.width+this.height)
+            }
+            //넓이를 구하는 메소드 추가
+            getArea(){
+                return this.width*this.height
+            }
+        }
+        //객체의 활용
+        const rectangle=new Rectangle(10, 20)
+        console.log(`사각형의 둘레: ${rectangle.getPerimeter()}`)
+        console.log(`사각형의 넓이: ${rectangle.getArea()}`)
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

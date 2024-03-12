@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>나의 할 일</title>
+    <script>
+        document.addEventListener('DOMContentLoaded', ()=>{
+        //각각의 문서객체에 변수 할당하기
+            const input=document.querySelector('#todo')
+            const addbutton=document.querySelector('button')
+            const todoList=document.querySelector('div')
+        
+        //밑에서 정의했던 문서객체의 순번할당 변수의 초기화
+        let keyCount=0
+
+        //함수 정의: todo-list 아래에서 추가되어 실행되는 함수
+            const addTodo=()=>{
+            //받아들인 입력양식에 내용이 없으면 경고문을 띄우고 추가하지 않음
+                if(input.value.trim()===''){
+                    alert('할 일을 입력해 주세요')
+                    return
+                }
+            //입력양식에 내용이 있으면 처리 시작
+                //이제 todo-list 안에서 처리할 또다른 객체들을 생성하는 것
+                const item=document.createElement('div')
+                const checkbox=document.createElement('input')
+                const text=document.createElement('span')
+                const button=document.createElement('button')
+                
+                //이제 추가될 새로운 문서객체를 구별하기 위해 번호를 설정해줌
+                const key=keyCount
+                keyCount+=1
+
+                //새로 생성한 item 객체를 구체화하기: 안에 checkbox,text,button 자식객체로 넣어야 함
+                item.setAttribute('data-key', key)
+                item.appendChild(checkbox)
+                item.appendChild(text)
+                item.appendChild(button)
+                //item을 todoList의 자식객체로 넣어야 함
+                todoList.appendChild(item)
+
+                //새로 생성한 checkbox 객체를 구체화하기
+                checkbox.type='checkbox'
+                checkbox.addEventListener('change', (event)=>{
+                    item.style.textDecoration=event.target.checked?'line-through':''
+                })
+
+                //새로 생성한 text 객체를 구체화하기
+                text.textContent=input.value
+
+                //새로 생성한 button 객체를 구체화하기
+                button.textContent='제거하기'
+                button.addEventListener('click', ()=>{
+                    removeTodo(key)
+                })
+
+                //addTodo()에서을 실행하면서 input칸에 적었던 내용은 없어져야 함
+                input.value=''
+            }
+        
+        //함수 정의: todo-list 아래에서 제거하기를 눌렀을 때 해당 객체를 제거하는 함수
+            const removeTodo=(key)=>{
+                //전달받은 키값에 해당하는 문서객체를 item에 전달함
+                const item=document.querySelector(`[data-key="${key}"]`)
+                todoList.removeChild(item)
+            }
+
+        //이벤트 연결: 추가하기 버튼을 누르면 addTodo가 실행됨
+            addbutton.addEventListener('click', addTodo)
+        //이벤트 연결: Enter를 누르면 addTodo가 실행됨
+            input.addEventListener('keyup', (event)=>{
+                const ENTER=13
+                if(event.keyCode===ENTER)
+                    addTodo()
+            })
+        })
+    </script>
+</head>
+<body>
+    <h1>개강 전에 해야할 일</h1>
+    <input id="todo">
+    <button id="add-button">추가하기</button>
+    <div id="todo-list"></div>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>글자수세기</title>
+    <script>
+        document.addEventListener('DOMContentLoaded', ()=>{
+            //문서객체를 가리키기 위한 변수의 생성
+            const h1=document.querySelector('h1')
+            const textarea=document.querySelector('textarea')
+            let timerID
+
+            //입력양식을 선택했을 때
+            textarea.addEventListener('focus', (event)=>{
+                //50밀리초마다 글자수 갱신을 실행하는 함수를 변수timerID에 저장함
+                timerID=setInterval(()=>{
+                    const length=textarea.value.length
+                    h1.textContent=`글자 수: ${length}`
+                }, 50)
+            })
+
+            //입력양식의 선택을 해제했을 때
+            textarea.addEventListener('blur',()=>{
+                //저장했던 timerID 함수가 더이상 실행되지 않도록
+                clearInterval(timerID)
+            })
+        })
+    </script>
+</head>
+<body>
+    <h1></h1>
+    <textarea></textarea>
+</body>
+</html>

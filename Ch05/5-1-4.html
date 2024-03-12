@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <script>
+
+    const year=Number(prompt('Year를 입력하시오', 'YYYY'))
+
+    function yearCheck(y){
+        if(y%4===0){
+            if(y%100===0 && y%400!==0)
+                return false
+            else
+                return true
+        }
+        else
+            return false
+    }
+
+    if(yearCheck(year))
+        alert(`${year}은 윤년입니다`)
+    else
+        alert(`${year}은 윤년이 아닙니다`)
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

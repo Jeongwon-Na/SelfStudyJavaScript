@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <script>
+        document.addEventListener('DOMContentLoaded', ()=>{
+            //아이디 선택자로 호출한 태그의 선택
+            const divA=document.querySelector('#first')
+            const divB=document.querySelector('#second')
+            //새로운 문서 객체 생성
+            const h1=document.createElement('h1')
+            //새로운 문서 객체의 내용 정하기
+            h1.textContent='이동하는 h1 태그'
+
+            //새로운 문서 객체의 부모객체가 계속 바뀌도록 설정
+            const toFirst=()=>{
+                //부모객체의 아이디가 first, 자식객체로 h1 생성
+                divA.appendChild(h1)
+                //1초 뒤에 toSecond함수 실행
+                setTimeout(toSecond, 1000)
+            }
+            const toSecond=()=>{
+                //부모객체의 아이디가 second, 자식객체로 h1 생성
+                divB.appendChild(h1)
+                //1초 뒤에 toFirst함수 실행
+                setTimeout(toFirst, 1000)
+            }
+            toFirst()
+        })
+    </script>
+</head>
+<body>
+    <div id="first">
+        <h1>첫 번째 div 태그 내부</h1>
+    </div>
+    <hr>
+    <div id="second">
+        <h1>두 번째 div 태그 내부</h1>
+    </div>
+</body>
+</html>

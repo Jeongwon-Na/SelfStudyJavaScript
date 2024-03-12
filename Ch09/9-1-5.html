@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <script>
+        //객체를 생성하는 함수의 선언
+        function createStudent(이름값, 국어값, 영어값, 수학값){
+            return {
+                //생성한 객체 안 속성
+                이름: 이름값,
+                국어: 국어값,
+                영어: 영어값,
+                수학: 수학값,
+                //생성한 객체 안 총합 메소드: 풀어서 선언하는 방법
+                getSumOf: function() {
+                    return this.국어+this.영어+this.수학
+                },
+                //생성한 객체 안 평균 메소드: 간단선언 구문 방법
+                getAverageOf(){
+                    return (this.getSumOf()/3).toFixed(2)
+                },
+                //해당 객체 안에서의 연산 결과를 반환하는 메소드
+                toString(){
+                    return `${this.이름}\t${this.getSumOf()}점\t${this.getAverageOf()}점\n`
+                }
+            }
+        }
+        //배열 안에 함수를 사용한 객체의 생성
+        const students=[]
+        students.push(createStudent('구름', 87, 98, 88))
+        students.push(createStudent('별이', 92, 98, 96))
+        students.push(createStudent('겨울', 76, 96, 94))
+        students.push(createStudent('바다', 98, 52, 98))
+        //이제 결과 출력
+        let output='이름\t총점\t평균\n'
+        for(const a of students){
+            output+=a.toString()
+        }
+        console.log(output)
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

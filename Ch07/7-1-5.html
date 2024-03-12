@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>문자열 vs HTML형식</title>
+    <script>
+        document.addEventListener('DOMContentLoaded',()=>{
+            //id선택자로 요소 가져오기
+            const a=document.querySelector('#a')
+            const b=document.querySelector('#b')
+
+            //글자 가져올 형식 정하기
+            a.textContent='<h1>변경된 내용을 textContent 속성으로 가져오기</h1>'
+            b.innerHTML='<h1>변경된 내용을 innerHTML 속성으로 가져오기</h1>'
+        })
+    </script>
+</head>
+<body>
+    <div id="a">원본1의 내용</div>
+    <div id="b">원본2의 내용</div>
+    <div id="c">원본3의 내용</div>
+</body>
+</html>

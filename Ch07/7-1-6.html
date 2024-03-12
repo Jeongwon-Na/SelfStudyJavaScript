@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>DOMContentLoaded</title>
+    <script>
+        document.addEventListener('DOMContentLoaded',()=>{
+            //rect 클래스 요소를 불러와 rects 배열에 저장
+            const rects=document.querySelectorAll('.rect')
+            //저장된 rects의 배열요소에 하나씩 접근
+            rects.forEach((rect, index)=>{
+                const width=(index+1)*100
+                const src=`http://placekitten.com/${width}/250`
+                rect.setAttribute('src', src)
+            })
+        })
+    </script>
+</head>
+<body>
+    <img class="rect">
+    <img class="rect">
+    <img class="rect">
+    <img class="rect">
+</body>
+</html>

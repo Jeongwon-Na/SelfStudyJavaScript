@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <script>
+        //클래스 선언해 생성자 함수 정의해보기
+        class Student{
+            constructor(이름, 국어, 영어, 수학){
+                this.이름=이름
+                this.국어=국어
+                this.영어=영어
+                this.수학=수학
+            }
+            getSumOf(){
+                return this.국어+this.영어+this.수학
+            }
+            getAverageOf(){
+                return (this.getSumOf()/3).toFixed(2)
+            }
+            toString(){
+                return `${this.이름}\t${this.getSumOf()}점\t${this.getAverageOf()}점\n`
+            }
+        }
+
+        //객체의 선언
+        const students=[]
+        students.push(new Student('구름', 87, 98, 88))
+        students.push(new Student('별이', 92, 98, 96))
+        students.push(new Student('겨울', 76, 96, 94))
+        students.push(new Student('바다', 98, 52, 98))
+
+        //연산의 결과를 출력
+        let output='이름\t총점\t평균\n'
+        for(const i of students){
+            output+=i.toString()
+        }
+        console.log(output)
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <script>
+
+        //callThreeTimes(): 매개변수로 받은 함수 안에 숫자를 집어넣음
+        function callThreeTimes(callback){
+            for(let k=0;k<3;k++){
+                callback(k)
+            }
+        }
+
+        //print(): 받은 매개변수가 무엇이냐에 따라 해당 숫자를 출력
+        function print(i){
+            console.log(`${i}번째 함수 호출`)
+        }
+
+        //print라는 함수를 매개변수로 넣어서 전달
+        callThreeTimes(print)
+    </script>
+</head>
+<body>
+
+</body>
+</html>

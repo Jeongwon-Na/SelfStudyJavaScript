@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>inch->cm</title>
+    <script>
+        document.addEventListener('DOMContentLoaded', ()=>{
+            //문서객체 각각을 변수에 할당하기
+            const input=document.querySelector('input')
+            const button=document.querySelector('button')
+            const p=document.querySelector('p')
+
+            button.addEventListener('click', ()=>{
+                //text로 입력한 내용을 숫자로 변환
+                const inch=Number(input.value)
+                //inch로 변환한 내용이 숫자가 아니라면 리턴하기
+                if(isNaN(inch)){
+                    p.textContent='숫자를 입력해 주세요'
+                    return
+                }
+                //정상적으로 숫자로 변환되었을 때는 변환 시작
+                const cm=inch*2.54
+                p.textContent=`${cm}cm`
+            })
+        })
+    </script>
+</head>
+<body>
+    <input type="text">inch<br>
+    <button>계산</button>
+    <p></p>
+</body>
+</html>

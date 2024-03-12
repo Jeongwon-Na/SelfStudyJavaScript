@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <script>
+        let output=''
+        const size=5
+
+        //5줄 출력
+        for(let i=1;i<=size;i++){
+            //공백 출력: 4, 3, 2, 1, 0출력
+            for(let j=size;j>i;j--){
+                output+=' '
+            }
+            //별 출력: 1, 3, 5, 7, 9
+            for(let k=0;k<2*i-1;k++){
+                output+='*'
+            }
+            output+='\n'
+        }
+
+        //4줄 출력: 4,3,2,1
+        for(let i=size-1;i>0;i--){
+            //공백 출력
+            for(let j=size;j>i;j--){
+                output+=' '
+            }
+            //별 출력: 7, 5, 3, 1
+            for(let k=0;k<2*i-1;k++){
+                output+='*'
+            }
+            output+='\n'
+        }
+
+        console.log(output)
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

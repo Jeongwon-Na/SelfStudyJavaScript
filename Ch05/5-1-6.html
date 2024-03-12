@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <script>
+        //최솟값을 구하는 함수
+        function minReturn(array){
+            let min=array[0]
+            for(let m=0;m<array.length;m++){
+                if(array[m]<min)
+                    min=array[m]
+            }
+            return min
+        }
+
+        const arrayList=[58, 42, 34, 68, 100, 23124, 65, 21, 346, 65]
+        console.log(`[${arrayList}] 중에서 가장 최솟값은 ${minReturn(arrayList)}입니다`)
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

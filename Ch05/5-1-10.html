@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <script>
+        function min(first, ...rests){
+            let min
+            let numList
+
+            //배열로 입력되었을 때: min([숫자, 숫자, ...], [ ])로 인식되었을 것
+            if(Array.isArray(first)){
+                min=first[0]
+                numList=first
+            }
+            //숫자로 입력되었을 때: min(숫자, [숫자, 숫자, ...])로 인식되었을 것
+            else if(typeof(first)==='number'){
+                min=first
+                numList=rests
+            }
+
+            for(const i of numList){
+                if(min>i)
+                    min=i
+            }
+            return min
+        }
+
+        console.log(`min( 배열 ) 경우의 최솟값은 ${min([3, 6, 2, 46, 32, 47])}`)
+        console.log(`min( 숫자, 숫자, ...) 경우의 최솟값은 ${min(4535, 7,345645,3, 56543, 4)}`)
+    </script>
+</head>
+<body>
+
+</body>
+</html>

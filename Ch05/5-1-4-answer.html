@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <script>
+        //ex1) 888 윤년임 1 출력, 1 1 1 
+        //ex2) 800 윤년임 1 출력, 1 0 (0) 1
+        function isLeapYear(year){
+            return (year%4===0) && (year%100!==0) || (year%400===0)
+        }
+
+        console.log(`2020년은 윤년일까? === ${isLeapYear(2020)}`)
+        console.log(`2021년은 윤년일까? === ${isLeapYear(2021)}`)
+        console.log(`2000년은 윤년일까? === ${isLeapYear(2000)}`)
+        console.log(`1900년은 윤년일까? === ${isLeapYear(1900)}`)
+        console.log(`2022년은 윤년일까? === ${isLeapYear(2023)}`)
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

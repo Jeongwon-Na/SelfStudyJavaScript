@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>방향키를 이용해 별을 이동하기</title>
+    <script>
+        document.addEventListener('DOMContentLoaded', ()=>{
+            //문서객체 h1을 star이라는 변수에 저장해 조작할 예정
+            const star=document.querySelector('h1')
+            //position 속성은 absolute,relative,fixed 중 하나. 여기서는 절대위치를 말함
+            star.style.position='absolute'
+
+        //화면에 별 배치
+            let [x, y]=[0, 0]
+            //키보드 조작 한 번당 움직이는 정도를 조절함
+            const block=50
+            const print=()=>{
+                //요소의 왼쪽 가장자리를 기준으로 한 좌표
+                star.style.left=`${x*block}px`
+                //요소의 상단 가장자리를 기준으로 한 좌표(top의 값이 증가하면 아래로 내려가게 됨)
+                star.style.top=`${y*block}px`
+            }
+            //조작이 없을 때도 항상 저장된 값에 따라서 별을 출력하고 있으므로 바로 print를 작성한 것
+            print()
+
+        //별을 이동하기
+            //방향키 keyCode를 대응하는 문자에 저장
+            const [left, up, right, down]=[37, 38, 39, 40]
+            //키보드가 눌릴 때를 기준으로 값 조정
+            document.addEventListener('keydown', (event)=>{
+                switch(event.keyCode){
+                    case left:
+                        x-=1
+                        break
+                    case up:
+                        y-=1
+                        break
+                    case right:
+                        x+=1
+                        break
+                    case down:
+                        y+=1
+                        break
+                }
+                print()
+            })
+        })
+    </script>
+</head>
+<body>
+    <h1>*</h1>
+</body>
+</html>

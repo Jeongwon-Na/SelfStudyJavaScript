@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <script>
+        function minReturn(...array){
+            let min=array[0]
+            for (const i of array) {
+                if(min>i)
+                    min=i
+            }
+            return min
+        }
+
+        console.log(`첫번째 배열인 [58, 42, 34, 68, 100, 23124, 65, 21, 346, 65] 중에서 최솟값은 ${minReturn(58, 42, 34, 68, 100, 23124, 65, 21, 346, 65)}이다`)
+        console.log(`두번째 배열인 [6,1,5,2,4,3] 중에서 최솟값은 ${minReturn(6,1,5,2,4,3)}이다`)
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

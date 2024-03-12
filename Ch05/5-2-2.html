@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <script>
+
+        function callThreeTimes(callback){
+            for(let k=0;k<3;k++){
+                callback(k)
+            }
+        }
+
+        callThreeTimes(function (i){
+            console.log(`${i}번째 함수 호출`)
+        })
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

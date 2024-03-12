@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <script>
+        const rawInput=prompt('태어난 해를 입력헤 주세요','')
+        const year=Number(rawInput)
+
+        let 간
+        const arr1='경,신,임,계,갑,을,병,정,무,기'.split(',')
+        간=arr1[year%10]
+
+        let 띠
+        const arr2='신,유,술,해,자,축,인,묘,진,사,오,미'.split(',')
+        띠=arr2[year%12]
+        
+        alert(`${year}년은 ${간}${띠}년입니다`)
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

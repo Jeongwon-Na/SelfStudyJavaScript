@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <script>
+        (function() {
+            let count = 0;
+
+            function increment() {
+              count++;
+              console.log(`Count: ${count}`);
+            }
+        
+            function decrement() {
+              count--;
+              console.log(`Count: ${count}`);
+            }
+        
+            // 외부에서 count 변수에 접근 불가능
+            // 오직 increment와 decrement 함수만 외부에서 사용 가능
+        
+            increment();
+            increment();
+            decrement();
+        })();
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
+  

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <script>
+        //a부터 b까지 더하는 함수
+        const a=Number(prompt('a부터 b까지 더하기', '입력_a'))
+        const b=Number(prompt('a부터 b까지 더하기', '입력_b'))
+
+        function add(num1, num2){
+            let result=0
+            for(let a=num1;a<=num2;a++)
+                result+=a
+            return result
+        }
+
+        alert(`더하기 연산의 결과는 ${add(a, b)}입니다`)
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

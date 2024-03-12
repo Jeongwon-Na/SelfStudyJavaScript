@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>keyup,keydown 이벤트가 발생할 때의 속성 출력</title>
+    <script>
+        document.addEventListener('DOMContentLoaded', ()=>{
+            //문서객체 h1를 저장하는 변수의 설정
+            const h1=document.querySelector('h1')
+            //이벤트 리스너 역할을 할 함수(첫번째 매개변수로 이벤트객체 전달)
+            const print=(event)=>{
+                let output=''
+                //alt, ctrl, shift 키를 눌렀는지에 대한 여부를 출력
+                output+=`alt: ${event.altKey}<br>`
+                output+=`ctrl: ${event.ctrlKey}<br>`
+                output+=`shift: ${event.shiftKey}<br>`
+                //code속성이 없는 구익스플로워와 엣지를 지원하기 위함. code가 없으면 keyCode로 돌아가게끔
+                output+=`code: ${typeof(event.code)!=='undefined'?event.code:event.keyCode}`
+                //이제 output에 저장한 내용을 출력해야함(h1에서 html코드로 작성된 부분을 JS로 조작할 내용이 output에 해당한다는 말)
+                h1.innerHTML=output
+            }
+            //모든 이벤트 모델의 이벤트 리스너는 첫번째 매개변수로 이벤트 객체를 받는다
+            document.addEventListener('keydown', print)
+            document.addEventListener('keyup', print)
+        })
+    </script>
+</head>
+<body>
+    <h1></h1>
+</body>
+</html>
